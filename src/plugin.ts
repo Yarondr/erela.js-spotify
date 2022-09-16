@@ -7,7 +7,7 @@ import {
     LoadType,
     SearchQuery,
     ModifyRequest
-} from "erela.js";
+} from "erela.js/src";
 import fetch from "petitio";
 
 const BASE_URL = "https://api.spotify.com/v1";
