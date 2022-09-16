@@ -203,7 +203,9 @@ export class Spotify extends Plugin {
             title: track.name,
             author: track.artists[0].name,
             duration: track.duration_ms,
-        };
+            originalUri: track.external_urls.spotify,
+            originalTitle: track.name,
+        } as UnresolvedQuery;
     }
 
     private async renewToken(): Promise<number> {
@@ -282,6 +284,9 @@ export interface SpotifyTrack {
     artists: Artist[];
     name: string;
     duration_ms: number;
+    external_urls : {
+        spotify: string;
+    };
 }
 
 export interface SearchResult {
