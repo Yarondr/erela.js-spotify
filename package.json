@@ -1,13 +1,16 @@
 {
-  "name": "erela.js-spotify",
-  "version": "1.2.1",
+  "name": "@yarond/erela.js-spotify",
+  "version": "1.2.2",
   "description": "Spotify plugin for Erela.JS",
   "main": "dist/index.js",
+  "types": "typings/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "typings"
   ],
   "scripts": {
-    "build": "rm -rf ./dist && tsc",
+    "build": "tsc",
+    "types": "dts-bundle --removeSource --name @yarond/erela.js-spotify --main ./dist --out ../typings/index.d.ts --baseDir ./dist",
     "publish:stable": "yarn build && yarn publish --access=public"
   },
   "keywords": [
